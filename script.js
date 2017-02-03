@@ -5,18 +5,21 @@
 //transfer the data from php over to javascript by converting it to JSON
 //var thermostatarray = <?php echo json_encode($array);?>;
 
-var resultCount = 200;
+var resultCount = 30;
 
 var table = document.getElementById("OvenTable");  //retrieves the table reference via the ID
 
 //this makes the main title row
 var rowx = table.insertRow(-1);  //adds a title row
+rowx.className = "titleRow";
 var cellx = rowx.insertCell(-1); //adds a title cell
 cellx.colSpan = "3"; //sets the span for the title to cover the whole table that will be generated
 cellx.innerHTML = "Temperature Results"; //sets the title
 
+
 //this makes the Block title row
 rowx = table.insertRow(-1);
+rowx.className = "labelRow";
 for (i=0; i<4; i=i+4) {
  cellx = rowx.insertCell(-1);
  cellx.innerHTML = "Stat";
@@ -38,6 +41,7 @@ var titlerows = table.rows.length - 1; //check how many title rows were made
 for (j=1; j<=resultCount; j++) { //creates result rows until all of the result set has been run through
     //inserts a new row for the next thermostat
     rowx = table.insertRow(-1);
+    rowx.className = "dataRow";
     cellx1 = rowx.insertCell(-1); //adds a new cell in the rightmost position
     cellx1.innerHTML = j;
 
@@ -78,4 +82,35 @@ for (j=1; j<=resultCount; j++) { //creates result rows until all of the result s
     else cellx1.style.backgroundColor = "red";
 
 
+}
+
+var rowCount = table.rows.length;
+var lastRow = table.rows[rowCount-1];
+lastRow.className = "lastRow";
+lastRow.cells[0].style.backgroundColor = "purple";
+lastRow.cells[1].style.backgroundColor = "purple";
+lastRow.cells[2].style.backgroundColor = "purple";
+
+
+var rowCount = $('#OvenTable >tbody >tr').length;
+
+//$(".titleRow").clone().appendTo($("table"));
+//$(".labelRow").clone().appendTo($("table"));
+
+$("tr").eq( 2 ).css( "backgroundColor = red" );
+
+
+
+var copyLabelRow = $(".labelRow").eq(0) ; //finds the first instance of a row with the labelRow class, this prevents the subsequent cloning from
+var copyTitleRow = $(".titleRow").eq(0);
+
+//var targetRow = $("tr").eq(2);
+//$(copyLabelRow).clone().insertAfter(targetRow);
+
+
+
+for (j=2; j<=resultCount; j=j+5) { //creates result rows until all of the result set has been run through
+  var targetRow = $("tr").eq(j);
+  //$(".labelRow").clone().insertAfter(targetRow);
+  $(copyLabelRow).clone().insertAfter(targetRow);
 }

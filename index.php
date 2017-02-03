@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 
     <title>Oven Status</title>
   </head>
