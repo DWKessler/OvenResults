@@ -5,9 +5,9 @@
 //transfer the data from php over to javascript by converting it to JSON
 //var thermostatarray = <?php echo json_encode($array);?>;
 
-var resultCount = 30;
+var resultCount = 50;
 
-var table = document.getElementById("OvenTable");  //retrieves the table reference via the ID
+var table = document.getElementById("OvenBody");  //retrieves the table reference via the ID
 
 //this makes the main title row
 var rowx = table.insertRow(-1);  //adds a title row
@@ -107,10 +107,35 @@ var copyTitleRow = $(".titleRow").eq(0);
 //var targetRow = $("tr").eq(2);
 //$(copyLabelRow).clone().insertAfter(targetRow);
 
+var tableEnd = '</tbody></table>';
+var tableStart = '<table id="OvenTable" class="OvenTable"  border="1" cellpadding="2"><tbody>';
 
+var increment = 10;
 
-for (j=2; j<=resultCount; j=j+5) { //creates result rows until all of the result set has been run through
-  var targetRow = $("tr").eq(j);
-  //$(".labelRow").clone().insertAfter(targetRow);
+for (j=increment-1; j<=resultCount; j=j+increment) { //increments through the dataRows at a defined or calculated increment and inserts the title and label rows
+  var targetRow = $(".dataRow").eq(j);
   $(copyLabelRow).clone().insertAfter(targetRow);
+  $(copyTitleRow).clone().insertAfter(targetRow);
+  //$(tableStart).insertAfter(targetRow);
+  //$(tableEnd).insertAfter(targetRow);
 }
+
+
+var $mainTable = $(".OvenTable");
+var splitBy = increment + 2;
+for (j=1; j< resultCount / 10; j++){
+  var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );
+  var $secondTable = $(".OvenTable").parent().append("<table id='secondTable' class='OvenTable'><tbody></tbody></table>");
+  $secondTable.find("tbody").append(zrows);
+
+}
+
+$mainTable.find ( "tr" ).slice( splitBy ).remove();
+$("#secondTable").find ( "tr" ).slice( splitBy ).remove();
+
+/*
+var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );
+var $secondTable = $(".OvenTable").parent().append("<table id='secondTable' class='OvenTable'><tbody></tbody></table>");
+$secondTable.find("tbody").append(zrows);  */
+
+//$mainTable.find ( "tr" ).slice( splitBy ).remove();

@@ -1,4 +1,4 @@
-#OvenTable {
+.OvenTable {
   border:1px solid #C0C0C0;
   border-collapse:collapse;
   padding:5px;
@@ -7,34 +7,35 @@
   text-align: center;
   font-weight: bold;
 }
-#OvenTable th {
+.OvenTable th {
   border:1px solid #C0C0C0;
   padding:5px;
   background:#F0F0F0;
 }
-#OvenTable td {
+.OvenTable td {
   border:1px solid #C0C0C0;
   padding:5px;
 }
 
 
 @media only screen and (max-width: 800px) {
-  #OvenTable {
+  .OvenTable {
       font-size: 8vw;
   }
 }
 
 
 @media only screen and (max-width: 600px) {
-  #OvenTable {
+  .OvenTable {
       font-size: 10vw;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  #OvenTable {
+  .OvenTable {
       font-size: 2vw;
-      width: 80%;
-      margin: auto;
+      width: 20%;
+      /*margin: auto;*/
+      float: left;
   }
 }

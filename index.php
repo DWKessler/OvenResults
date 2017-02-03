@@ -9,7 +9,12 @@
 
   <body>
 
-    <table id="OvenTable"  border="1" cellpadding="2"></table>
+    <table id="OvenTable" class="OvenTable" border="1" cellpadding="2">
+      <tbody id="OvenBody">
+
+      </tbody>
+
+    </table>
 
     <script type="text/javascript" src="script.js"></script>
 
