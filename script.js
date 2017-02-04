@@ -5,7 +5,7 @@
 //transfer the data from php over to javascript by converting it to JSON
 //var thermostatarray = <?php echo json_encode($array);?>;
 
-var resultCount = 50;
+var resultCount = 200;
 
 var table = document.getElementById("OvenBody");  //retrieves the table reference via the ID
 
@@ -110,12 +110,13 @@ var copyTitleRow = $(".titleRow").eq(0);
 var tableEnd = '</tbody></table>';
 var tableStart = '<table id="OvenTable" class="OvenTable"  border="1" cellpadding="2"><tbody>';
 
-var increment = 10;
+var increment = 20;
 
 for (j=increment-1; j<=resultCount; j=j+increment) { //increments through the dataRows at a defined or calculated increment and inserts the title and label rows
   var targetRow = $(".dataRow").eq(j);
-  $(copyLabelRow).clone().insertAfter(targetRow);
-  $(copyTitleRow).clone().insertAfter(targetRow);
+  $(copyLabelRow).clone().insertAfter(targetRow).addClass("copiedLabel");
+  //copiedLabel.className = "copyiedLabel"
+  $(copyTitleRow).clone().insertAfter(targetRow).addClass("copiedTitle");
   //$(tableStart).insertAfter(targetRow);
   //$(tableEnd).insertAfter(targetRow);
 }
@@ -123,15 +124,14 @@ for (j=increment-1; j<=resultCount; j=j+increment) { //increments through the da
 
 var $mainTable = $(".OvenTable");
 var splitBy = increment + 2;
-for (j=1; j< resultCount / 10; j++){
+for (j=1; j< resultCount / 10; j++){  //j< resultCount / 10
   var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );
   var $secondTable = $(".OvenTable").parent().append("<table id='secondTable' class='OvenTable'><tbody></tbody></table>");
-  $secondTable.find("tbody").append(zrows);
-
+  $secondTable.find("tbody").last().append(zrows);
 }
 
-$mainTable.find ( "tr" ).slice( splitBy ).remove();
-$("#secondTable").find ( "tr" ).slice( splitBy ).remove();
+//$mainTable.find ( "tr" ).slice( splitBy ).remove();
+//$("#secondTable").find ( "tr" ).slice( splitBy ).remove();
 
 /*
 var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );

@@ -22,12 +22,19 @@
   .OvenTable {
       font-size: 8vw;
   }
+
 }
 
 
 @media only screen and (max-width: 600px) {
   .OvenTable {
       font-size: 10vw;
+  }
+  .copiedLabel {
+    display: none;
+  }
+  .copiedTitle {
+    display: none;
   }
 }
 
