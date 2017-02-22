@@ -6,6 +6,10 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 .header {
   background-color: blue;
@@ -34,7 +38,6 @@ p {
 }
 
 .dropdown-content a {
-    text-decoration: none;
     display: block;
     padding: 5px 5px;
     font-size: 1.5em;

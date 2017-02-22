@@ -8,12 +8,12 @@
 
   <body>
     <div class="header">
-        <div><p class="dropTitle">Wako Electronics Statistics</p></div>
+        <div><p class="dropTitle"><a href="index.php">Wako Electronics Statistics</a></p></div>
 
         <div class="dropdown"><p class="dropTitle">Ovens</p>
           <div class="dropdown-content">
-            <a href="#">Status</a>
-            <a href="#">Results</a>
+            <a href="ovenStatus.php">Status</a>
+            <a href="ovenResults.php">Results</a>
             <a href="#">History</a>
           </div>
         </div>
