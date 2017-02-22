@@ -5,12 +5,13 @@
 //transfer the data from php over to javascript by converting it to JSON
 //var thermostatarray = <?php echo json_encode($array);?>;
 
-var resultCount = 200;
+var resultCount = 504;
 
 var table = document.getElementById("OvenBody");  //retrieves the table reference via the ID
 
 //this makes the main title row
-var rowx = table.insertRow(-1);  //adds a title row
+var tHead = document.getElementById("OvenTable").createTHead();
+var rowx = tHead.insertRow(-1);  //adds a title row
 rowx.className = "titleRow";
 var cellx = rowx.insertCell(-1); //adds a title cell
 cellx.colSpan = "3"; //sets the span for the title to cover the whole table that will be generated
@@ -18,15 +19,18 @@ cellx.innerHTML = "Temperature Results"; //sets the title
 
 
 //this makes the Block title row
-rowx = table.insertRow(-1);
+rowx = tHead.insertRow(-1);
 rowx.className = "labelRow";
 for (i=0; i<4; i=i+4) {
  cellx = rowx.insertCell(-1);
  cellx.innerHTML = "Stat";
+ cellx.className = "stat";
  cellx = rowx.insertCell(-1);
  cellx.innerHTML = "Off";
+ cellx.className = "off";
  cellx = rowx.insertCell(-1);
  cellx.innerHTML = "On";
+ cellx.className = "on";
 
  if (i!=0) {  //prevents spacers from being added after the last block
    cellx = rowx.insertCell(-1);
@@ -44,6 +48,7 @@ for (j=1; j<=resultCount; j++) { //creates result rows until all of the result s
     rowx.className = "dataRow";
     cellx1 = rowx.insertCell(-1); //adds a new cell in the rightmost position
     cellx1.innerHTML = j;
+    cellx1.className = "thermostatNumber";
 
     var offcheck;
     var oncheck;
@@ -87,15 +92,12 @@ for (j=1; j<=resultCount; j++) { //creates result rows until all of the result s
 var rowCount = table.rows.length;
 var lastRow = table.rows[rowCount-1];
 lastRow.className = "lastRow";
-lastRow.cells[0].style.backgroundColor = "purple";
-lastRow.cells[1].style.backgroundColor = "purple";
-lastRow.cells[2].style.backgroundColor = "purple";
+//lastRow.cells[0].style.backgroundColor = "purple";
+//lastRow.cells[1].style.backgroundColor = "purple";
+//lastRow.cells[2].style.backgroundColor = "purple";
 
 
 var rowCount = $('#OvenTable >tbody >tr').length;
-
-//$(".titleRow").clone().appendTo($("table"));
-//$(".labelRow").clone().appendTo($("table"));
 
 $("tr").eq( 2 ).css( "backgroundColor = red" );
 
@@ -104,21 +106,15 @@ $("tr").eq( 2 ).css( "backgroundColor = red" );
 var copyLabelRow = $(".labelRow").eq(0) ; //finds the first instance of a row with the labelRow class, this prevents the subsequent cloning from
 var copyTitleRow = $(".titleRow").eq(0);
 
-//var targetRow = $("tr").eq(2);
-//$(copyLabelRow).clone().insertAfter(targetRow);
-
 var tableEnd = '</tbody></table>';
 var tableStart = '<table id="OvenTable" class="OvenTable"  border="1" cellpadding="2"><tbody>';
 
-var increment = 20;
+var increment = 14;
 
 for (j=increment-1; j<=resultCount; j=j+increment) { //increments through the dataRows at a defined or calculated increment and inserts the title and label rows
   var targetRow = $(".dataRow").eq(j);
   $(copyLabelRow).clone().insertAfter(targetRow).addClass("copiedLabel");
-  //copiedLabel.className = "copyiedLabel"
   $(copyTitleRow).clone().insertAfter(targetRow).addClass("copiedTitle");
-  //$(tableStart).insertAfter(targetRow);
-  //$(tableEnd).insertAfter(targetRow);
 }
 
 
@@ -130,12 +126,5 @@ for (j=1; j< resultCount / 10; j++){  //j< resultCount / 10
   $secondTable.find("tbody").last().append(zrows);
 }
 
-//$mainTable.find ( "tr" ).slice( splitBy ).remove();
-//$("#secondTable").find ( "tr" ).slice( splitBy ).remove();
 
-/*
-var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );
-var $secondTable = $(".OvenTable").parent().append("<table id='secondTable' class='OvenTable'><tbody></tbody></table>");
-$secondTable.find("tbody").append(zrows);  */
-
-//$mainTable.find ( "tr" ).slice( splitBy ).remove();
+//$('.OvenTable').stickyTableHeaders();

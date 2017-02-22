@@ -1,11 +1,19 @@
+.tableContainer {
+  margin:auto;
+  width: 95%;
+}
+
+
 .OvenTable {
+  font-family: serif;
   border:1px solid #C0C0C0;
   border-collapse:collapse;
-  padding:5px;
+  margin:5px;
   width: 100%;
   font-size: 2vw;
   text-align: center;
-  font-weight: bold;
+  font-weight: normal;
+
 }
 .OvenTable th {
   border:1px solid #C0C0C0;
@@ -15,6 +23,18 @@
 .OvenTable td {
   border:1px solid #C0C0C0;
   padding:5px;
+}
+
+.thermostatNumber {
+  font-weight: bold;
+}
+
+.titleRow {
+  font-weight: bold;
+}
+
+.labelRow {
+  font-weight: bold;
 }
 
 
@@ -30,18 +50,31 @@
   .OvenTable {
       font-size: 10vw;
   }
-  .copiedLabel {
-    display: none;
+  .copiedLabel, .copiedTitle {
+    /*display: none;*/
   }
-  .copiedTitle {
-    display: none;
+
+  thead {
+    color: black;
+    background-color: white ;
   }
+
+
 }
 
 @media only screen and (min-width: 1200px) {
   .OvenTable {
       font-size: 2vw;
-      width: 20%;
+      width: 15%;
+      /*margin: auto;*/
+      float: left;
+  }
+}
+
+@media print {
+  .OvenTable {
+      font-size: 1vw;
+      width: 10%;
       /*margin: auto;*/
       float: left;
   }
