@@ -12,6 +12,7 @@ a {
 
 .mainNav {
   border: none;
+  cursor: auto;
 }
 
 .header {
@@ -48,13 +49,16 @@ a {
     background-color: cornflowerblue;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown:hover .dropTitle {
+.dropdown:hover .dropTitle,
+.mainNav:hover {
     background-color: #3e8e41;
 }
 
