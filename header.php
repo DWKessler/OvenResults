@@ -19,13 +19,13 @@
         </div>
         <div class="dropdown"><p class="dropTitle">Assembly 5</p>
           <div class="dropdown-content">
-            <a href="#">Status</a>
+            <a href="chartAssembly5CPtime.php">Status</a>
             <a href="#">History</a>
           </div>
         </div>
         <div class="dropdown"><p class="dropTitle">Base Unit Asm</p>
           <div class="dropdown-content">
-            <a href="#">Status</a>
+            <a href="chartBaseUnitCP.php">Status</a>
             <a href="#">History</a>
           </div>
         </div>

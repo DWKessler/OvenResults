@@ -53,3 +53,10 @@ a {
 .dropdown:hover .dropTitle {
     background-color: #3e8e41;
 }
+
+
+@media print {
+  .header {
+      display: none;
+  }
+}
