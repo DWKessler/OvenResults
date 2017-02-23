@@ -8,7 +8,9 @@
 
   <body>
     <div class="header">
-        <div><p class="dropTitle"><a href="index.php">Wako Electronics Statistics</a></p></div>
+        <form method="get" action="index.php">
+          <button class="dropTitle mainNav" type="submit">Wako Electronics Statistics</button>
+        </form>
 
         <div class="dropdown"><p class="dropTitle">Ovens</p>
           <div class="dropdown-content">
@@ -30,8 +32,6 @@
           </div>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
-
   </body>
 
 </html>
