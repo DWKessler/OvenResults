@@ -193,8 +193,8 @@ $mysqli->close();
 <html>
   <head>
 	<title>Base Unit CP Chart</title>
-	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<link rel="stylesheet" type="text/css" href="stat.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/stat.css">
 
 	<style>
 		html {
@@ -202,11 +202,11 @@ $mysqli->close();
 			}
 		body div{
 			background-color: #fff;
-			margin: auto;
 			}
 	</style>
-    <!--   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>       -->
-	<script type="text/javascript" src="gstatic/loader.js"></script>
+  <?php include 'header.php';?>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<!--   <script type="text/javascript" src="gstatic/loader.js"></script>       -->
 
 
     <script type="text/javascript">
@@ -214,7 +214,7 @@ $mysqli->close();
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 		var data = new google.visualization.DataTable(<?=$jsonTable1?>);
-
+    console.log(JSON.stringify(<?=$jsonTable1?>));
 		var view = new google.visualization.DataView(data);
 		view.setColumns([{
 			type: 'date',
@@ -226,16 +226,16 @@ $mysqli->close();
 		}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
 
 
-        var options = {
-          title: 'Base Unit CP Adjustment Track',
-		  titlePosition: 'in',
-		  //hAxis: {title: 'Timestamp (Unix Seconds)'},
-          vAxis: {title: 'Contact Pressure (grams)', min: 30},
-		  vAxis: {
+      var options = {
+        title: 'Base Unit CP Adjustment Track',
+		    titlePosition: 'in',
+		    //hAxis: {title: 'Timestamp (Unix Seconds)'},
+        vAxis: {title: 'Contact Pressure (grams)', min: 30},
+		    vAxis: {
 					viewWindowMode:'explicit',
 					viewWindow: {
-						max:150,
-						min:50
+					max:150,
+					min:50
 					}
 				},
           //legend: 'bottom',
@@ -298,6 +298,7 @@ $mysqli->close();
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 		var data = new google.visualization.DataTable(<?=$jsonTable2?>);
+    console.log(JSON.stringify(<?=$jsonTable2?>));
 		var view = new google.visualization.DataView(data);
 		view.setColumns([{
 			type: 'date',

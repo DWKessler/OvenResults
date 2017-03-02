@@ -8,7 +8,7 @@
 
   <body>
     <div class="header">
-        <form method="get" action="index.php">
+        <form method="get" action="index.php" class="topNav">
           <button class="dropTitle mainNav" type="submit">Wako Electronics Statistics</button>
         </form>
 

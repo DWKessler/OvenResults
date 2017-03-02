@@ -68,3 +68,23 @@ a {
       display: none;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+  }
+
+  .dropdown {
+    width: 30%
+  }
+
+  .mainNav, .topNav {
+    width: 100%;
+    margin-bottom: 3px;
+  }
+
+  .mainNav, .dropdown {
+    text-align: center;
+  }
+}

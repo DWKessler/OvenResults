@@ -203,8 +203,8 @@ $mysqli->close();
 <html>
   <head>
 	<title>Assembly 5 CP Chart</title>
-	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<link rel="stylesheet" type="text/css" href="stat.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/stat.css">
 
 	<style>
 		html {
@@ -212,11 +212,12 @@ $mysqli->close();
 			}
 		body div{
 			background-color: #fff;
-			margin: auto;
+			
 			}
 	</style>
-    <!--   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>       -->
-	<script type="text/javascript" src="gstatic/loader.js"></script>
+  <?php include 'header.php';?>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	  <!--   <script type="text/javascript" src="gstatic/loader.js"></script>       -->
 
 
     <script type="text/javascript">
@@ -224,7 +225,7 @@ $mysqli->close();
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 		var data = new google.visualization.DataTable(<?=$jsonTable1?>);
-
+    console.log(JSON.stringify(<?=$jsonTable1?>));
 		var view = new google.visualization.DataView(data);
 		view.setColumns([{
 			type: 'date',
@@ -236,54 +237,61 @@ $mysqli->close();
 		}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
 
 
-        var options = {
-          title: 'Assy5 CP Adjustment Track',
-		  titlePosition: 'in',
-		  //hAxis: {title: 'Timestamp (Unix Seconds)'},
-          vAxis: {title: 'Contact Pressure (grams)', min: 30},
-		  vAxis: {
-					viewWindowMod�:''xplicit',
-		�		4iewWindow: {
-						max:150,
-						mij
-%�
-					}
-				}�
-b         //legend �rottom',	)$ legend: {position: 'in', textSrytf: {bold: 4ruD}},
-		  chartAse�:{top:10,width:'90%',bottom:30},
-		  �bendlines: y		10: [�			type8 /minear',
-				color: 'black',
-				lineWidth: 5,
-				oxaCmty* q$	A{HkwR2: false,
-				visible�nL'gend2 Tvud,�
-			l�belInLegend: 'LSL'
-				},
-			!1z({
-				type: 'linear',
-				color: 'black%,				lineWidth: 5,
-				opacity: 1,
-				showR2: false,
-				visibleIn�eg'nd: true,
-�	�labelInHewgnd:�'UL'
-I		|	�
-			},�3eriec:`s
+    var options = {
+      title: 'Assy5 CP Adjustment Track',
+      titlePosition: 'in',
+      //hAxis: {title: 'Timestamp (Unix Seconds)'},
+      vAxis: {title: 'Contact Pressure (grams)', min: 30},
+      vAxis: {
+        viewWindowMode:'explicit',
+        viewWindow: {
+        max:150,
+        min:50
+        }
+      },
+        //legend: 'bottom',
+    legend: {position: 'in', textStyle: {bold: true}},
+    chartArea:{top:10,width:'90%',bottom:30},
+    trendlines: {
+    10: {
+      type: 'linear',
+      color: 'black',
+      lineWidth: 5,
+      opacity: 1,
+      showR2: false,
+      visibleInLegend: true,
+      labelInLegend: 'LSL'
+      },
+    11: {
+      type: 'linear',
+      color: 'black',
+      lineWidth: 5,
+      opacity: 1,
+      showR2: false,
+      visibleInLegend: true,
+      labelInLegend: 'USL'
+      }
+    },
+    series: {
+      0:{color: '#33ccff', pointShape: 'square'},  //station 1
+      1:{color: '#33ccff', pointShape: 'diamond'}, //station 2
+      2:{color: 'green', pointShape: 'square'}, //station 3 good
+      3:{color: 'red', pointShape: 'square', pointSize: 10}, //station 3 adjlow
+      4:{color: 'orange', pointShape: 'square'}, //station 3 startlow
+      5:{color: 'brown', pointShape: 'square', pointSize: 8}, //station 3 endhigh
+      6:{color: 'green', pointShape: 'diamond'}, //station 4 good
+      7:{color: 'red', pointShape: 'diamond', pointSize: 10}, //station 4 adjlow
+      8:{color: 'orange', pointShape: 'diamond'}, //station 4 startlow
+      9:{color: 'brown', pointShape: 'diamond', pointSize: 8}, //station 4 endhigh
+      10:{pointsVisible: false, visibleInLegend: false},
+      11:{pointsVisible: false, visibleInLegend: false}
+    },
+    explorer: {
+      keepInBounds: true,
+      maxZoomOut: 1
 
-	�;{color: '#33ccff', pointShape: 'square'},  //station 1
-			12zcolor:"'+23ccff', pointShape: 'diamonl']( //stctann"2				2:{bo�or: 'green', pointShape: 'square'}, //station 3 gooD�			3:{colkr*"'red', pointShape: 'square', p/anuWize: 10}, //station 3 adjlow
-I		4:{color: 'grAjge', pointShape: 'square'}, //station 3 startlow
-				5:{cohob8 'brown', po�jtjiqe: 'square', pointSize: 8}, //station ; Ejfhafj			6:{color: 'green', pointShape: 'diamond'}, //station 4 good
-				7:{color: 'red', pointShape: 'diamond', pointSize: 10}, //station 4 adjlow
-				8:{color: 'orange', pointShape: 'diamond'}, //station 4 startlow
-				9:{color: 'brown', pointShape: 'diamond', pointSize: 8}, //station 4 endhigh
-				10:{pointsVisible: false, visibleInLegend: false},
-				11:{pointsVisible: false, visibleInLegend: false}
-			},
-			explorer: {
-				keepInBounds: true,
-				maxZoomOut: 1
 
-
-			}
+    }
 
 
 
@@ -301,6 +309,7 @@ I		4:{color: 'grAjge', pointShape: 'square'}, //station 3 startlow
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 		var data = new google.visualization.DataTable(<?=$jsonTable2?>);
+    console.log(JSON.stringify(<?=$jsonTable2?>));
 		var view = new google.visualization.DataView(data);
 		view.setColumns([{
 			type: 'date',
