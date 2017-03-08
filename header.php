@@ -12,20 +12,20 @@
           <button class="dropTitle mainNav" type="submit">Wako Electronics Statistics</button>
         </form>
 
-        <div class="dropdown"><p class="dropTitle">Ovens</p>
+        <div class="dropdown"><p class="dropTitle">Ovens &#x25BC</p>
           <div class="dropdown-content">
             <a href="ovenStatus.php">Status</a>
             <a href="ovenResults.php">Results</a>
             <a href="#">History</a>
           </div>
         </div>
-        <div class="dropdown"><p class="dropTitle">Assembly 5</p>
+        <div class="dropdown"><p class="dropTitle">Assembly 5 &#x25BC</p>
           <div class="dropdown-content">
             <a href="chartAssembly5CPtime.php">Status</a>
             <a href="#">History</a>
           </div>
         </div>
-        <div class="dropdown"><p class="dropTitle">Base Unit Asm</p>
+        <div class="dropdown"><p class="dropTitle">Base Unit Asm &#x25BC</p>
           <div class="dropdown-content">
             <a href="chartBaseUnitCP.php">Status</a>
             <a href="#">History</a>
