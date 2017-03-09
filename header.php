@@ -9,7 +9,7 @@
   <body>
     <div class="header">
         <form method="get" action="index.php" class="topNav">
-          <button class="dropTitle mainNav" type="submit">Wako Electronics Statistics</button>
+          <button class="dropTitle mainNav" type="submit"><img class="logo" src="img/WakoLogoTrans.png">Wako Electronics Statistics</button>
         </form>
 
         <div class="dropdown"><p class="dropTitle">Ovens &#x25BC</p>

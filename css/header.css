@@ -28,6 +28,7 @@ a {
   padding: 1em 2em;
   /*margin: 1em 2em;*/
   font-size: 1.5em;
+  vertical-align: middle;
 }
 
 .dropdown {
@@ -39,7 +40,6 @@ a {
     display: none;
     position: absolute;
     z-index: 1;
-
 }
 
 .dropdown-content a {
@@ -49,6 +49,10 @@ a {
     background-color: cornflowerblue;
     border-width: 0px 0px 1px;
     border-style: solid;
+}
+
+.dropdown-content a:last-of-type {
+    border-width: 0px;
 }
 
 .dropdown-content a:hover {
@@ -64,6 +68,11 @@ a {
 .dropdown:hover .dropTitle,
 .mainNav:hover {
     background-color: #3e8e41;
+}
+
+.logo {
+  max-width: 25px;
+  vertical-align: middle;
 }
 
 
@@ -90,5 +99,9 @@ a {
 
   .mainNav, .dropdown {
     text-align: center;
+  }
+
+  .dropTitle {
+    padding: 0.25em 1em;
   }
 }
