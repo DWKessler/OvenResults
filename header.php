@@ -16,28 +16,28 @@
           <div class="dropdown-content">
             <a href="ovenStatus.php">Status</a>
             <a href="ovenResults.php">Results</a>
-            <a href="ovenruns_view.php">Oven Runs</a>
-            <a href="ovenproduct_view.php">Oven Product</a>
-            <a href="ovendevices_view.php">Oven Devices</a>
+            <a href="ovenruns_view.php">Runs</a>
+            <a href="ovenproduct_view.php">Products</a>
+            <a href="ovendevices_view.php">Devices</a>
           </div>
         </div>
-        <div class="dropdown"><p class="dropTitle">Assembly 5 &#x25BC</p>
+        <div class="dropdown"><p class="dropTitle"><span class="longTitle">Assembly 5</span><span class="shortTitle">Assy 5</span> &#x25BC</p>
           <div class="dropdown-content">
             <a href="chartAssembly5CPtime.php">Status</a>
             <a href="#">History</a>
           </div>
         </div>
-        <div class="dropdown"><p class="dropTitle">Base Unit Asm &#x25BC</p>
+        <div class="dropdown"><p class="dropTitle"><span class="longTitle">Base Unit Asm</span><span class="shortTitle">BU Asm</span> &#x25BC</p>
           <div class="dropdown-content">
             <a href="chartBaseUnitCP.php">Status</a>
             <a href="#">History</a>
           </div>
         </div>
-        <div class="dropdown"><p class="dropTitle">Multitester &#x25BC</p>
+        <div class="dropdown"><p class="dropTitle"><span class="longTitle">Multitester</span><span class="shortTitle">Tester</span> &#x25BC</p>
           <div class="dropdown-content">
-            <a href="multitesterruns_view.php">Multitester Runs</a>
-            <a href="multitesterproduct_view.php">Multitester Products</a>
-            <a href="multitesterdevices_view.php">Multitester Devices</a>
+            <a href="multitesterruns_view.php">Runs</a>
+            <a href="multitesterproduct_view.php">Products</a>
+            <a href="multitesterdevices_view.php">Devices</a>
           </div>
         </div>
     </div>

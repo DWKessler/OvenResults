@@ -75,6 +75,14 @@ a {
   vertical-align: middle;
 }
 
+.shortTitle {
+  display: none;
+}
+
+.longTitle {
+  display: inline;
+}
+
 
 @media print {
   .header {
@@ -89,7 +97,7 @@ a {
   }
 
   .dropdown {
-    width: 30%
+    width: 20%
   }
 
   .mainNav, .topNav {
@@ -103,5 +111,12 @@ a {
 
   .dropTitle {
     padding: 0.25em 1em;
+  }
+
+  .longTitle {
+    display: none;
+  }
+  .shortTitle {
+    display: inline;
   }
 }
