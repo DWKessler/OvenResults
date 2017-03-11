@@ -16,7 +16,9 @@
           <div class="dropdown-content">
             <a href="ovenStatus.php">Status</a>
             <a href="ovenResults.php">Results</a>
-            <a href="#">History</a>
+            <a href="ovenruns_view.php">Oven Runs</a>
+            <a href="ovenproduct_view.php">Oven Product</a>
+            <a href="ovendevices_view.php">Oven Devices</a>
           </div>
         </div>
         <div class="dropdown"><p class="dropTitle">Assembly 5 &#x25BC</p>
@@ -29,6 +31,13 @@
           <div class="dropdown-content">
             <a href="chartBaseUnitCP.php">Status</a>
             <a href="#">History</a>
+          </div>
+        </div>
+        <div class="dropdown"><p class="dropTitle">Multitester &#x25BC</p>
+          <div class="dropdown-content">
+            <a href="multitesterruns_view.php">Multitester Runs</a>
+            <a href="multitesterproduct_view.php">Multitester Products</a>
+            <a href="multitesterdevices_view.php">Multitester Devices</a>
           </div>
         </div>
     </div>

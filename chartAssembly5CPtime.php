@@ -212,7 +212,7 @@ $mysqli->close();
 			}
 		body div{
 			background-color: #fff;
-			
+
 			}
 	</style>
   <?php include 'header.php';?>
@@ -351,7 +351,14 @@ $mysqli->close();
 
   <body>
 	<section>
-		<a href='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>'>Previous</a><a href='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>'>Next</a>
+    <form method="get" action='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>' class="previous">
+      <button class="navButton" type="submit">&#8606 Previous Timeperiod</button>
+    </form>
+    <form method="get" action='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>' class="next">
+      <button class="navButton" type="submit">&#8608 Next Timeperiod</button>
+    </form>
+		<a id="previous" href='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>'>Previous</a>
+    <a id="next" href='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>'>Next</a>
 	</section>
 	<section>
 		<div id="chart_div1" class="ca51" style="width: 99%;"></div>
