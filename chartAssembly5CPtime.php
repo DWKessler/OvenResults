@@ -10,11 +10,7 @@ version : 1.0
 (modified)
 */
 
-
-$DB_NAME = 'yun';
-$DB_HOST = 'localhost';
-$DB_USER = 'yun';
-$DB_PASS = 'hawk';
+include('connect-db.php');
 
 $LSL = 75;
 $USL = 90;
@@ -30,15 +26,6 @@ if (isset($_GET['time'])) {
 }else{
     $time = 0;
 }
-
-  /* Establish the database connection */
-  $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-
-  if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-  }
-
 
 	$timerange = array(9);
 
