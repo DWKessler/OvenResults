@@ -7,7 +7,6 @@
     <script src="jquery.stickytableheaders.min.js" type="text/javascript" charset="utf-8"></script>
     <title>Oven Results</title>
   </head>
-
   <body>
     <!-- Pull in the header file -->
     <?php include 'header.php';?>

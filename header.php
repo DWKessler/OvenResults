@@ -9,7 +9,7 @@
     <div class="header">
         <!-- This form is the main logo -->
         <form method="get" action="index.php" class="topNav">
-          <button class="dropTitle mainNav" type="submit"><img class="logo" src="img/WakoLogoTrans.png">Wako Electronics Statistics</button>
+          <button class="dropTitle mainNav" type="submit"><img class="logo" src="img/LogoTrans.png">Electronics Statistics</button>
         </form>
         <!-- Each of the following top level divs are hoverable titles that show dropdown menus -->
         <div class="dropdown"><p class="dropTitle">Ovens &#x25BC</p>
