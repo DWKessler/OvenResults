@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Pull in the stylesheet -->
+    <link rel="stylesheet" href="css/status.css" />
     <title>Oven Status</title>
   </head>
-
   <body>
+    <!-- Pull in the header file -->
     <?php include 'header.php';?>
 
-    <style>
-      #OvenTable {
-        border:1px solid #C0C0C0;
-        border-collapse:collapse;
-        padding:5px;
-        width: 100%;
-        font-size: 2vw;
-        text-align: center;
-        font-weight: bold;
-      }
-      #OvenTable th {
-        border:1px solid #C0C0C0;
-        padding:5px;
-        background:#F0F0F0;
-      }
-      #OvenTable td {
-        border:1px solid #C0C0C0;
-        padding:5px;
-      }
-    </style>
-
+    <!-- This creates a table that is later filled using javascript -->
     <table id="OvenTable"  border="1" cellpadding="2"></table>
 
+    <!-- This javascript adds rows/columns/data/color-highlighting to the above OvenTable -->
     <script type="text/javascript" src="statusScript.php"></script>
-
   </body>
-
 </html>

@@ -5,7 +5,7 @@
 //transfer the data from php over to javascript by converting it to JSON
 //var thermostatarray = <?php echo json_encode($array);?>;
 
-var resultCount = 504;
+var resultCount = 504; //this currently statically controls the number of results that are tabulated.
 
 var table = document.getElementById("OvenBody");  //retrieves the table reference via the ID
 
@@ -50,9 +50,11 @@ for (j=1; j<=resultCount; j++) { //creates result rows until all of the result s
     cellx1.innerHTML = j;
     cellx1.className = "thermostatNumber";
 
+    //these two variables are used to determine whether both chacteristics of the thermostat are in spec or not
     var offcheck;
     var oncheck;
 
+    //inserts an "off" temperature results cell and generates a random number to simulate actual data
     cellx = rowx.insertCell(-1);
     cellx.innerHTML = Number(Math.random().toFixed(2))*5+78;
 
@@ -67,6 +69,7 @@ for (j=1; j<=resultCount; j++) { //creates result rows until all of the result s
       offcheck = 0;
     }
 
+    //inserts an "on" temperature results cell and generates a random number to simulate actual data
     cellx = rowx.insertCell(-1);
     cellx.innerHTML = Number(Math.random().toFixed(2))*5+68;
 
@@ -85,46 +88,34 @@ for (j=1; j<=resultCount; j++) { //creates result rows until all of the result s
       cellx1.style.backgroundColor = "blue";
     }
     else cellx1.style.backgroundColor = "red";
-
-
 }
 
-var rowCount = table.rows.length;
-var lastRow = table.rows[rowCount-1];
-lastRow.className = "lastRow";
-//lastRow.cells[0].style.backgroundColor = "purple";
-//lastRow.cells[1].style.backgroundColor = "purple";
-//lastRow.cells[2].style.backgroundColor = "purple";
 
+//var rowCount = $('#OvenTable >tbody >tr').length;
 
-var rowCount = $('#OvenTable >tbody >tr').length;
-
-$("tr").eq( 2 ).css( "backgroundColor = red" );
-
-
-
-var copyLabelRow = $(".labelRow").eq(0) ; //finds the first instance of a row with the labelRow class, this prevents the subsequent cloning from
+//finds the first instance of a row with the labelRow and TitleRow classes, this prevents the subsequent cloning from cloning multiple copies
+var copyLabelRow = $(".labelRow").eq(0) ;
 var copyTitleRow = $(".titleRow").eq(0);
 
-var tableEnd = '</tbody></table>';
-var tableStart = '<table id="OvenTable" class="OvenTable"  border="1" cellpadding="2"><tbody>';
+//defines strings for endign one table and beginning anothe rtable
+//var tableEnd = '</tbody></table>';
+//var tableStart = '<table id="OvenTable" class="OvenTable"  border="1" cellpadding="2"><tbody>';
 
-var increment = 14;
+var increment = 14; //this defines the increment by which the table is split
 
-for (j=increment-1; j<=resultCount; j=j+increment) { //increments through the dataRows at a defined or calculated increment and inserts the title and label rows
-  var targetRow = $(".dataRow").eq(j);
-  $(copyLabelRow).clone().insertAfter(targetRow).addClass("copiedLabel");
-  $(copyTitleRow).clone().insertAfter(targetRow).addClass("copiedTitle");
+ //increments through the dataRows at a defined or calculated increment and inserts the title and label rows
+for (j=increment-1; j<=resultCount; j=j+increment) {
+  var targetRow = $(".dataRow").eq(j); //selects the nth dataRow based on the for loop
+  $(copyLabelRow).clone().insertAfter(targetRow).addClass("copiedLabel");  //inserts the label row
+  $(copyTitleRow).clone().insertAfter(targetRow).addClass("copiedTitle");  //inserts the title row
 }
-
 
 var $mainTable = $(".OvenTable");
-var splitBy = increment + 2;
-for (j=1; j< resultCount / 10; j++){  //j< resultCount / 10
-  var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );
-  var $secondTable = $(".OvenTable").parent().append("<table id='secondTable' class='OvenTable'><tbody></tbody></table>");
-  $secondTable.find("tbody").last().append(zrows);
+var splitBy = increment + 2; //adds two because of the added title and label rows
+
+//based on the number of results and the increment used, slices up the mainTable into secondary appended tables
+for (j=1; j< resultCount / (increment - 1); j++){
+  var zrows = $mainTable.find ( "tr" ).slice( splitBy,splitBy*2 );  //slices off rows
+  var $secondTable = $(".OvenTable").parent().append("<table id='secondTable' class='OvenTable'><tbody></tbody></table>"); //appends a seconary table to the table container
+  $secondTable.find("tbody").last().append(zrows); //inserts the sliced rows into the new secondary table
 }
-
-
-//$('.OvenTable').stickyTableHeaders();

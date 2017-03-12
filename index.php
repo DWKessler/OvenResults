@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- This is just a landing page -->
   <head>
     <title>Oven Status</title>
   </head>

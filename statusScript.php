@@ -11,7 +11,7 @@ var table = document.getElementById("OvenTable");  //retrieves the table referen
 var rowx = table.insertRow(-1);  //adds a title row
 var cellx = rowx.insertCell(-1); //adds a title cell
 cellx.colSpan = "46"; //sets the span for the title to cover the whole table that will be generated
-cellx.innerHTML = "Low Oven Status"; //sets the title
+cellx.innerHTML = "Oven Status"; //sets the title
 
 //this makes the Block title row
 rowx = table.insertRow(-1);
@@ -33,13 +33,7 @@ for (j=0; j<36; j++) { //works from left to right
   for (i=1; i<15; i++) {  //and top to bottom
     if (j==0) rowx = table.insertRow(-1); //if on the first column, adds all the new rows
     cellx = table.rows[i+titlerows].insertCell(-1); //adds a new cell in the rightmost position
-
-
-    //cellx.innerHTML = i+j*14; //gives the cell a number based on its position
-    //cellx.innerHTML = "<?php echo '1';?>"   //this is a placeholder for php content
-    //cellx.innerHTML = "<?php echo array_rand($array);?>"   //this is a placeholder for php content
-    //cellx.innerHTML = Math.round(Math.random());  //populates the cells with random continuity data
-    cellx.innerHTML = thermostatarray[i+j*14];
+    cellx.innerHTML = thermostatarray[i+j*14];  //populates the cells with data from the json array, which was generated from php data
 
     //this section color codes the cells either yellow or blue based on their continuity value / cell contents
     if (cellx.innerHTML == 1) {

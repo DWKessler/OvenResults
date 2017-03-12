@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-
-
-
 <?php
-/*
-Script  : PHP-JSON-MySQLi-GoogleChart
-Author  : Enam Hossain
-version : 1.0
-(modified)
-*/
+  /*
+  Script  : PHP-JSON-MySQLi-GoogleChart
+  Author  : Enam Hossain
+  version : 1.0
+  (modified)
+  */
 
-include('connect-db.php');
+  include('connect-db.php');
 
-$LSL = 55;
-$USL = 70;
+  //these variables define the acceptable limits of contact pressure on the chart
+  $LSL = 55;
+  $USL = 70;
 
-if (isset($_GET['qty'])) {
-    $limitqty = $_GET['qty'];
-}else{
-    $limitqty = 500;
-}
+  //check whether a specific number of datapoints has been requested in the URL
+  if (isset($_GET['qty'])) {
+      $limitqty = $_GET['qty'];
+  }else{
+      $limitqty = 500;  //set it to 500 if nothing is specified
+  }
 
-	$timerange = array(9);
+	$timerange = array(9);  //empty array variable to hold incoming SQL data
 
+  //this query
 	$query = "SELECT max(timestamp),min(timestamp) FROM (
 	SELECT * FROM (SELECT timestamp,station1,station3,adjustedlow1,adjustedlow2 FROM bucp WHERE station1 > 0 AND station3 > 20 ORDER BY timestamp DESC LIMIT $limitqty)a
 	UNION ALL
@@ -72,8 +72,8 @@ if (isset($_GET['qty'])) {
   $table = array();
   $table['cols'] = array(
     // Labels for your chart, these represent the column titles.
-    array('label' => 'Time', 'type' => 'number'),
-    array('label' => 'Station1 (Before Adjustment)', 'type' => 'number'),
+  array('label' => 'Time', 'type' => 'number'),
+  array('label' => 'Station1 (Before Adjustment)', 'type' => 'number'),
 	array('label' => 'Station2 (Before Adjustment)', 'type' => 'number'),
 	array('label' => 'Station3 (End Good)', 'type' => 'number'),
 	array('label' => 'Station3 (Adjusted Low)', 'type' => 'number'),
@@ -85,94 +85,86 @@ if (isset($_GET['qty'])) {
 	array('label' => 'Station4 (Ended High)', 'type' => 'number'),
 	array('label' => 'LSL', 'type' => 'number'),
 	array('label' => 'USL', 'type' => 'number')
-);
+  );
 
-    /* Extract the information from $result */
-    foreach($result as $r) {
-
+  /* Extract the information from $result */
+  foreach($result as $r) {
       $temp = array();
-      // The following line will be used to slice the Pie chart
       $temp[] = array('v' => (int) $r['timelimits']);
-      // Values of the each slice
       $temp[] = array('v' => (float) $r['station1start']);
-	  $temp[] = array('v' => (float) $r['station2start']);
-	  $temp[] = array('v' => (float) $r['station3endgood']);
-	  $temp[] = array('v' => (float) $r['station3adjlow']);
-	  $temp[] = array('v' => (float) $r['station3startlow']);
-	  $temp[] = array('v' => (float) $r['station3endhigh']);
-	  $temp[] = array('v' => (float) $r['station4endgood']);
-	  $temp[] = array('v' => (float) $r['station4adjlow']);
-	  $temp[] = array('v' => (float) $r['station4startlow']);
-	  $temp[] = array('v' => (float) $r['station4endhigh']);
-	  $temp[] = array('v' => (float) $LSL);
-	  $temp[] = array('v' => (float) $USL);
+  	  $temp[] = array('v' => (float) $r['station2start']);
+  	  $temp[] = array('v' => (float) $r['station3endgood']);
+  	  $temp[] = array('v' => (float) $r['station3adjlow']);
+  	  $temp[] = array('v' => (float) $r['station3startlow']);
+  	  $temp[] = array('v' => (float) $r['station3endhigh']);
+  	  $temp[] = array('v' => (float) $r['station4endgood']);
+  	  $temp[] = array('v' => (float) $r['station4adjlow']);
+  	  $temp[] = array('v' => (float) $r['station4startlow']);
+  	  $temp[] = array('v' => (float) $r['station4endhigh']);
+  	  $temp[] = array('v' => (float) $LSL);
+  	  $temp[] = array('v' => (float) $USL);
       $rows[] = array('c' => $temp);
     }
-$table['rows'] = $rows;
-// convert data into JSON format
-$jsonTable1 = json_encode($table);
-//echo $jsonTable;
+  $table['rows'] = $rows;
+  // convert data into JSON format
+  $jsonTable1 = json_encode($table);
+  //echo $jsonTable;
 
 
 
-$result->free();
+  $result->free();
 
 
-$result = $mysqli->query("SELECT timestamp,statscrap,adjustmentdial,statrate/100 FROM bucp WHERE station1 > 0 AND station3 > 20 AND timestamp<$timerange[0] AND timestamp>$timerange[1] ORDER BY timestamp DESC;");
+  $result = $mysqli->query("SELECT timestamp,statscrap,adjustmentdial,statrate/100 FROM bucp WHERE station1 > 0 AND station3 > 20 AND timestamp<$timerange[0] AND timestamp>$timerange[1] ORDER BY timestamp DESC;");
 
   $rows = array();
   $table = array();
   $table['cols'] = array(
     // Labels for your chart, these represent the column titles.
     array('label' => 'Time', 'type' => 'number'),
-	array('label' => 'Scrap', 'type' => 'number'),
-	array('label' => 'DialSetting', 'type' => 'number'),
-	array('label' => 'Rate', 'type' => 'number')
-);
+  	array('label' => 'Scrap', 'type' => 'number'),
+  	array('label' => 'DialSetting', 'type' => 'number'),
+  	array('label' => 'Rate', 'type' => 'number')
+  );
 
     /* Extract the information from $result */
-    foreach($result as $r) {
-
-      $temp = array();
-      // The following line will be used to slice the Pie chart
-      $temp[] = array('v' => (int) $r['timestamp']);
-      // Values of the each slice
+  foreach($result as $r) {
+    $temp = array();
+    // The following line will be used to slice the Pie chart
+    $temp[] = array('v' => (int) $r['timestamp']);
+    // Values of the each slice
 	  $temp[] = array('v' => (float) $r['statscrap']);
 	  $temp[] = array('v' => (int) $r['adjustmentdial']);
 	  $temp[] = array('v' => (float) $r['statrate/100']);
       $rows[] = array('c' => $temp);
-    }
-$table['rows'] = $rows;
-// convert data into JSON format
-$jsonTable2 = json_encode($table);
-//echo $jsonTable;
+  }
+  $table['rows'] = $rows;
+  // convert data into JSON format
+  $jsonTable2 = json_encode($table);
+  //echo $jsonTable;
 
 
-$result->free();
-$array = array(9);
+  $result->free();
+  $array = array(9);
 
-$query = "SELECT station12delta,station34delta,station12count,station34count FROM bucp ORDER BY timestamp DESC LIMIT 1;";
+  $query = "SELECT station12delta,station34delta,station12count,station34count FROM bucp ORDER BY timestamp DESC LIMIT 1;";
 
-$result = $mysqli->query($query);
+  $result = $mysqli->query($query);
 
-if($result === false) {
-  trigger_error('Wrong SQL: ' . $query . ' Error: ' . $mysqli->error, E_USER_ERROR);
-}
-$result->data_seek(0);
+  if($result === false) {
+    trigger_error('Wrong SQL: ' . $query . ' Error: ' . $mysqli->error, E_USER_ERROR);
+  }
+  $result->data_seek(0);
 
-    while ($row = mysqli_fetch_row($result)) {
-		$array[0]=$row[0];
-		$array[1]=$row[1];
-		$array[2]=$row[2];
-		$array[3]=$row[3];
-    }
+      while ($row = mysqli_fetch_row($result)) {
+  		$array[0]=$row[0];
+  		$array[1]=$row[1];
+  		$array[2]=$row[2];
+  		$array[3]=$row[3];
+      }
 
-
-$result->free();
-
-$mysqli->close();
-
-
+  $result->free();
+  $mysqli->close();
 ?>
 
 
