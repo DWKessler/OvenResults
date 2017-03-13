@@ -2,6 +2,7 @@
 <html>
   <head>
     <!-- Pullin the stylesheets and jquery -->
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/results.css" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="jquery.stickytableheaders.min.js" type="text/javascript" charset="utf-8"></script>

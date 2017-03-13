@@ -13,6 +13,7 @@ function renderForm($device ='', $product ='', $lot ='', $desc ='', $error = '')
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
+		<link rel="stylesheet" href="css/normalize.css" />
 		<title>
 			<?php if (isset($_GET['runid'])) {
 						$runid = $_GET['runid'];

@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+	<link rel="stylesheet" href="css/normalize.css" />
 	<title>View Multitester Runs</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
@@ -32,7 +33,6 @@
 					<th>description</th>
 					<th></th>
 					<th></th>
-					<th></th>
 				 </tr>";
 
 			while ($row = $result->fetch_object())
@@ -44,9 +44,9 @@
 				echo "<td>" . $row->product . "</td>";
 				echo "<td>" . $row->lot . "</td>";
 				echo "<td>" . $row->description . "</td>";
-				echo "<td><a href='multitesterruns_view-targets.php?runid=" . $row->runid . "'>Modify Targets</a></td>";
+				echo "<td><a href='multitesterruns_view-targets.php?runid=" . $row->runid . "'>View Targets/Progress</a></td>";
 				echo "<td><a href='multitesterruns_records.php?runid=" . $row->runid . "'>Edit</a></td>";
-				echo "<td><a href='multitesterruns_delete.php?runid=" . $row->runid . "'>Delete</a></td>";
+				//echo "<td><a href='multitesterruns_delete.php?runid=" . $row->runid . "'>Delete</a></td>";
 				echo "</tr>";
 			}
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Pull in the stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css" />
+    
     <link rel="stylesheet" href="css/header.css" />
   </head>
   <body>

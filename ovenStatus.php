@@ -2,6 +2,7 @@
 <html>
   <head>
     <!-- Pull in the stylesheet -->
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/status.css" />
     <title>Oven Status</title>
   </head>
