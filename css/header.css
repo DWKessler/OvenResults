@@ -45,6 +45,10 @@
     text-decoration: none;
 }
 
+a:visited, a:active{
+  color:blue;
+}
+
 /*when the dropdowns are hovered, display the content*/
 .dropdown:hover .dropdown-content {
     display: block;
