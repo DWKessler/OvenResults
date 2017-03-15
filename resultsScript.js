@@ -104,7 +104,7 @@ var copyTitleRow = $(".titleRow").eq(0);
 var increment = 14; //this defines the increment by which the table is split
 
  //increments through the dataRows at a defined or calculated increment and inserts the title and label rows
-for (j=increment-1; j<=resultCount; j=j+increment) {
+for (j=increment-1; j<=resultCount-increment; j=j+increment) {
   var targetRow = $(".dataRow").eq(j); //selects the nth dataRow based on the for loop
   $(copyLabelRow).clone().insertAfter(targetRow).addClass("copiedLabel");  //inserts the label row
   $(copyTitleRow).clone().insertAfter(targetRow).addClass("copiedTitle");  //inserts the title row
