@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/view.css" />
 <title>View Multitester Devices</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>

@@ -1,0 +1,17 @@
+/*center the table on the page with some space on either side*/
+table,
+body p,
+body h1,
+table a {
+  margin:auto;
+  width: 95%;
+  text-align: center;
+}
+
+table tr {
+  font-size: 2vw;
+}
+
+table tr:nth-child(even) {
+  background-color: lightgrey;
+}
