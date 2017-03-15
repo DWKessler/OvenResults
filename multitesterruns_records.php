@@ -1,13 +1,10 @@
 <?php
-/*
-Allows the user to both create new records and edit existing records
-*/
+//allows for viewing and editing multitester runs and adding a new run.
 
 // connect to the database
 include("connect-db.php");
 
 // creates the new/edit record form
-// since this form is used multiple times in this file, I have made it a function that is easily reusable
 function renderForm($device ='', $product ='', $lot ='', $desc ='', $error = '')
 { ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">

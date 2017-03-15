@@ -1,28 +1,28 @@
 <?php
-/*
-Allows the user to both create new records and edit existing records
-*/
+//This page shows the status of a life test run and lets the user change the targets for the life test
 
 // connect to the database
 include("connect-db.php");
 
+//pull the runid for the lifetest from the URL
 if (isset($_GET['runid'])) {
 	$runid = $_GET['runid'];
 }
 
-// creates the new/edit record form
-// since this form is used multiple times in this file, I have made it a function that is easily reusable
+// creates the record form
 function renderForm($T1 ='', $T2 ='',$T3 ='',$T4 ='',$T5 ='',$T6 ='',$T7 ='', $error = '')
 { ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
+		<!-- Pull in the stylesheet -->
 		<link rel="stylesheet" href="css/normalize.css" />
 		<title>Edit Record</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	</head>
 	<body>
+		<!-- Pull in the header -->
 		<?php include 'header.php';?>
 		<h1>Edit Record</h1>
 		<?php if ($error != '') {
@@ -36,7 +36,7 @@ function renderForm($T1 ='', $T2 ='',$T3 ='',$T4 ='',$T5 ='',$T6 ='',$T7 ='', $e
 			<input type="hidden" name="runid" value="<?php echo $runid; ?>" />
 			<p>ID: <?php echo $runid; ?></p>
 			<?php } ?>
-
+			<!-- The form for editing values -->
 			<strong>T1: *</strong> <input type="text" name="T1"
 			value="<?php echo $T1; ?>"/><br/>
 			<strong>T2: *</strong> <input type="text" name="T2"
@@ -60,21 +60,14 @@ function renderForm($T1 ='', $T2 ='',$T3 ='',$T4 ='',$T5 ='',$T6 ='',$T7 ='', $e
 
 <?php }
 
-
-
-/*
-
-EDIT RECORD
-
-*/
-// if the 'id' variable is set in the URL, we know that we need to edit a record
+//PHP to edit an existing record
+//check that a runid is specified
 if (isset($_GET['runid']))
 {
-	// if the form's submit button is clicked, we need to process the form
+	//if the form's submit button is clicked, we need to process the form
 	if (isset($_POST['submit']))
 	{
-		// get variables from the URL/form
-		//$runid = $_POST['runid'];
+		//get variables from the URL/form
 		$T1 = htmlentities($_POST['T1'], ENT_QUOTES);
 		$T2 = htmlentities($_POST['T2'], ENT_QUOTES);
 		$T3 = htmlentities($_POST['T3'], ENT_QUOTES);
@@ -83,7 +76,7 @@ if (isset($_GET['runid']))
 		$T6 = htmlentities($_POST['T6'], ENT_QUOTES);
 		$T7 = htmlentities($_POST['T7'], ENT_QUOTES);
 
-		// check that firstname and lastname are both not empty
+		// check that required fields are not empty
 		if ($T1 == '' || $T2 == '' || $T3 == '' || $T4 == '' || $T5 == '' || $T6 == '' || $T7 == '')
 		{
 			// if they are empty, show an error message and display the form
@@ -92,7 +85,7 @@ if (isset($_GET['runid']))
 		}
 		else
 		{
-			// if everything is fine, update the record in the database
+			// if all required fields are complete, update the records in the database
 			$query="UPDATE multitester_targetCycles SET targetcycles = $T1 WHERE thermostat = 1 AND runid = '$runid';
 				UPDATE multitester_targetCycles SET targetcycles = $T2 WHERE thermostat = 2 AND runid = '$runid';
 				UPDATE multitester_targetCycles SET targetcycles = $T3 WHERE thermostat = 3 AND runid = '$runid';
@@ -112,7 +105,6 @@ if (isset($_GET['runid']))
 					}
 					/* print divider */
 					if ($mysqli->more_results()) {
-						//printf("-----------------\n");
 					}
 				} while ($mysqli->next_result());
 			}
@@ -122,7 +114,7 @@ if (isset($_GET['runid']))
 				//echo $mysqli->error;
 			}
 
-			// redirect the user once the form is updated
+			//redirect the user once the form is updated
 			header("Location: multitesterruns_view-targets.php?runid=" . $runid);
 		}
 
@@ -133,10 +125,10 @@ if (isset($_GET['runid']))
 		// get 'id' from URL
 		$runid = $_GET['runid'];
 
-		// get the recod from the database
+		//get the recod from the database
 		if ($result = $mysqli->query("SELECT targetcycles FROM multitester_targetCycles WHERE runid = '$runid'"))
 		{
-			// display records if there are records to display
+			//display records if there are records to display
 			if ($result->num_rows > 0)
 			{
 				$array = array(9);
@@ -158,7 +150,7 @@ if (isset($_GET['runid']))
 
 			renderForm($T1,$T2,$T3,$T4,$T5,$T6,$T7);
 		}
-		// show an error if the query has an error
+		//show an error if the query has an error
 		else
 		{
 			echo "Error: could not prepare SQL statement";
@@ -166,6 +158,6 @@ if (isset($_GET['runid']))
 	}
 }
 
-// close the mysqli connection
+//close the mysqli connection
 $mysqli->close();
 ?>
