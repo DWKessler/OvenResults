@@ -1,20 +1,10 @@
-body {
-  margin-top: 0px;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
+/*styles the mainNav, which is a button, to appear like the other headers*/
 .mainNav {
   border: none;
   cursor: auto;
 }
 
+/* define the basic color scheme and create a flexbox */
 .header {
   background-color: blue;
   display: flex;
@@ -22,77 +12,77 @@ a {
   justify-content: space-between;
 }
 
+/*format the color/size/alignment of the header titles*/
 .dropTitle {
   background-color: cornflowerblue;
-  /*list-style-type: none;*/
   padding: 1em 2em;
-  /*margin: 1em 2em;*/
-  font-size: 1.5em;
+  margin: 0;
+  font-size: 1.1em;
   vertical-align: middle;
 }
 
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
+/*position the dropdown contect so that it is hidden by default, drops down from the parent element, and shows above the main content*/
 .dropdown-content {
     display: none;
     position: absolute;
     z-index: 1;
+    width: 100%;
+    text-align: center;
 }
 
+/*set size, color, and border for the dropdown contents*/
 .dropdown-content a {
     display: block;
     padding: 5px 5px;
     font-size: 1.5em;
     background-color: cornflowerblue;
-    border-width: 0px 0px 1px;
+    border-width: 1px 0px 0px;
     border-style: solid;
+    text-decoration: none;
 }
 
-.dropdown-content a:last-of-type {
-    border-width: 0px;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1
-}
-
+/*when the dropdowns are hovered, display the content*/
 .dropdown:hover .dropdown-content {
     display: block;
-    width: 100%;
-    text-align: center;
 }
 
+/*set a hover color*/
 .dropdown:hover .dropTitle,
-.mainNav:hover {
+.mainNav:hover,
+.dropdown-content a:hover {
     background-color: #3e8e41;
 }
 
+/*align the logo in the middle of its parent element and constrain its size*/
 .logo {
   max-width: 25px;
   vertical-align: middle;
 }
 
+/*default to hiding the shortTitle option*/
 .shortTitle {
   display: none;
 }
 
+/*default to showing the longTitle option*/
 .longTitle {
   display: inline;
 }
 
-
+/*for printing, hide the header*/
 @media print {
   .header {
       display: none;
   }
 }
 
+/*when on smaller screens: wrap the header, make elements smaller, and use shortTitles instead of longTitles for the header*/
 @media only screen and (max-width: 1000px) {
   .header {
-    /*flex-direction: column;*/
     flex-wrap: wrap;
   }
 
