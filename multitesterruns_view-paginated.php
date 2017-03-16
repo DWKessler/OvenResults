@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<?php include 'header.php';?>
-		<h1>View Multitester Runs</h1>
+		<h1 class="viewTitle">View Multitester Runs</h1>
 
 		<?php
 		// connect to the database
@@ -51,7 +51,7 @@
 				}
 
 				// display pagination
-				echo "<p><a href='multitesterruns_view.php'>View All</a> | <b>View Page:</b> ";
+				echo "<p class="viewOptions"><a href='multitesterruns_view.php'>View All</a> | <b>View Page:</b> ";
 				for ($i = 1; $i <= $total_pages; $i++)
 				{
 					if (isset($_GET['page']) && $_GET['page'] == $i)
@@ -66,7 +66,7 @@
 				echo "</p>";
 
 				// display data in table
-				echo "<table border='1' cellpadding='10'>";
+				echo "<table border='1' cellpadding='10' class="viewTable">";
 				echo "<tr>
 						<th>runid</th>
 						<th>device</th>
@@ -118,6 +118,6 @@
 
 		?>
 
-		<a href="multitesterruns_records.php">Add New Record</a>
+		<a class="addNew" href="multitesterruns_records.php">Add New Record</a>
 	</body>
 </html>

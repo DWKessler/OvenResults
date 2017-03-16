@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php include 'header.php';?>
-<h1>View Records</h1>
+<h1 class="viewTitle">View Records</h1>
 
 <?php
 // connect to the database
@@ -51,7 +51,7 @@ $end = $per_page;
 }
 
 // display pagination
-echo "<p><a href='ovendevices_view.php'>View All</a> | <b>View Page:</b> ";
+echo "<p class="viewOptions"><a href='ovendevices_view.php'>View All</a> | <b>View Page:</b> ";
 for ($i = 1; $i <= $total_pages; $i++)
 {
 if (isset($_GET['page']) && $_GET['page'] == $i)
@@ -66,7 +66,7 @@ echo "<a href='ovendevices_view-paginated.php?page=$i'>$i</a> ";
 echo "</p>";
 
 // display data in table
-echo "<table border='1' cellpadding='10'>";
+echo "<table border='1' cellpadding='10' class="viewTable">";
 echo "<tr>
 		<th>device_id</th>
 		<th>description</th>
@@ -112,7 +112,7 @@ $mysqli->close();
 
 ?>
 
-<a href="ovendevices_records.php">Add New Record</a>
+<a class="addNew" href="ovendevices_records.php">Add New Record</a>
 </body>
 </html>
 </html>

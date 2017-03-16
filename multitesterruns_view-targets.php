@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php include 'header.php';?>
-	<h1>View Multitester Targets</h1>
+	<h1 class="viewTitle">View Multitester Targets</h1>
 
 	<?php
 	// connect to the database
@@ -25,7 +25,7 @@
 		if ($result->num_rows > 0)
 		{
 			// display records in a table
-			echo "<table border='1' cellpadding='10'>";
+			echo "<table border='1' cellpadding='10' class="viewTable">";
 
 			// set table headers
 			echo "<tr>
@@ -90,7 +90,7 @@
 
 	?>
 
-	<a href="multitesterruns_view.php">Back to Runs</a>
+	<a class="addNew" href="multitesterruns_view.php">Back to Runs</a>
 </body>
 
 

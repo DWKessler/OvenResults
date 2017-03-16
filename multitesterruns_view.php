@@ -7,9 +7,9 @@
 </head>
 <body>
 	<?php include 'header.php';?>
-	<h1>View Multitester Runs</h1>
+	<h1 class="viewTitle">View Multitester Runs</h1>
 
-	<p><b>View All</b> | <a href="multitesterruns_view-paginated.php">View Paginated</a></p>
+	<p class="viewOptions"><b>View All</b> | <a href="multitesterruns_view-paginated.php">View Paginated</a></p>
 
 	<?php
 	// connect to the database
@@ -22,7 +22,7 @@
 		if ($result->num_rows > 0)
 		{
 			// display records in a table
-			echo "<table border='1' cellpadding='10'>";
+			echo "<table border='1' cellpadding='10' class="viewTable">";
 
 			// set table headers
 			echo "<tr>
@@ -69,7 +69,7 @@
 
 	?>
 
-	<a href="multitesterruns_records.php">Add New Record</a>
+	<a class="addNew" href="multitesterruns_records.php">Add New Record</a>
 </body>
 
 

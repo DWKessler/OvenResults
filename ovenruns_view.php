@@ -8,7 +8,7 @@
 <body>
 <?php include 'header.php';?>
 
-<h1>View Records</h1>
+<h1 class="viewTitle">View Records</h1>
 
 <?php
 // connect to the database
@@ -58,7 +58,7 @@ $end = $per_page;
 }
 
 // display pagination
-echo "<p><a href='ovenruns_view.php'>View All</a> | <b>View Page:</b> ";
+echo "<p class="viewOptions"><a href='ovenruns_view.php'>View All</a> | <b>View Page:</b> ";
 for ($i = 1; $i <= $total_pages; $i++)
 {
 if (isset($_GET['page']) && $_GET['page'] == $i)
@@ -73,7 +73,7 @@ echo "<a href='ovenruns_view.php?page=$i'>$i</a> ";
 echo "</p>";
 
 // display data in table
-echo "<table border='1' cellpadding='10'>";
+echo "<table border='1' cellpadding='10' class="viewTable">";
 echo "<tr>
 		<th>runid</th>
 		<th>device</th>

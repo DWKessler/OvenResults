@@ -7,9 +7,9 @@
 </head>
 <body>
 <?php include 'header.php';?>
-<h1>View Records</h1>
+<h1 class="viewTitle">View Records</h1>
 
-<p><b>View All</b> | <a href="ovenproduct_view-paginated.php">View Paginated</a></p>
+<p class="viewOptions"><b>View All</b> | <a href="ovenproduct_view-paginated.php">View Paginated</a></p>
 
 <?php
 // connect to the database
@@ -22,7 +22,7 @@ if ($result = $mysqli->query("SELECT * FROM ovenshifter_products ORDER BY produc
 if ($result->num_rows > 0)
 {
 // display records in a table
-echo "<table border='1' cellpadding='10'>";
+echo "<table border='1' cellpadding='10' class="viewTable">";
 
 // set table headers
 echo "<tr>
@@ -70,7 +70,7 @@ $mysqli->close();
 
 ?>
 
-<a href="ovenproduct_records.php">Add New Record</a>
+<a class="addNew" href="ovenproduct_records.php">Add New Record</a>
 </body>
 
 
