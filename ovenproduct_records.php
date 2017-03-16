@@ -38,11 +38,11 @@ echo "<div style='padding:4px; border:1px solid red; color:red'>" . $error
 <strong>product: *</strong> <input type="text" name="product"
 value="<?php echo $product; ?>"/><br/>
 <strong>FL: *</strong> <input type="text" name="FL"
-value="<?php echo $FL; ?>"/>
+value="<?php echo $FL; ?>"/><br/>
 <strong>FH: *</strong> <input type="text" name="FH"
-value="<?php echo $FH; ?>"/>
+value="<?php echo $FH; ?>"/><br/>
 <strong>NH: *</strong> <input type="text" name="NH"
-value="<?php echo $NH; ?>"/>
+value="<?php echo $NH; ?>"/><br/>
 <strong>NL: *</strong> <input type="text" name="NL"
 value="<?php echo $NL; ?>"/>
 <p>* required</p>

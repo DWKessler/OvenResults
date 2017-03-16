@@ -38,25 +38,25 @@ echo "<div style='padding:4px; border:1px solid red; color:red'>" . $error
 <strong>product: *</strong> <input type="text" name="product"
 value="<?php echo $product; ?>"/><br/>
 <strong>FL: *</strong> <input type="text" name="FL"
-value="<?php echo $FL; ?>"/>
+value="<?php echo $FL; ?>"/><br/>
 <strong>FH: *</strong> <input type="text" name="FH"
-value="<?php echo $FH; ?>"/>
+value="<?php echo $FH; ?>"/><br/>
 <strong>NH: *</strong> <input type="text" name="NH"
-value="<?php echo $NH; ?>"/>
+value="<?php echo $NH; ?>"/><br/>
 <strong>NL: *</strong> <input type="text" name="NL"
-value="<?php echo $NL; ?>"/>
+value="<?php echo $NL; ?>"/><br/>
 <strong>safetyLimit: *</strong> <input type="text" name="safetyLimit"
-value="<?php echo $safetyLimit; ?>"/>
+value="<?php echo $safetyLimit; ?>"/><br/>
 <strong>offOffset: *</strong> <input type="text" name="offOffset"
-value="<?php echo $offOffset; ?>"/>
+value="<?php echo $offOffset; ?>"/><br/>
 <strong>onOffset: *</strong> <input type="text" name="onOffset"
-value="<?php echo $onOffset; ?>"/>
+value="<?php echo $onOffset; ?>"/><br/>
 <strong>onMaxOffset: *</strong> <input type="text" name="onMaxOffset"
-value="<?php echo $onMaxOffset; ?>"/>
+value="<?php echo $onMaxOffset; ?>"/><br/>
 <strong>currentLimit: *</strong> <input type="text" name="currentLimit"
-value="<?php echo $currentLimit; ?>"/>
+value="<?php echo $currentLimit; ?>"/><br/>
 <strong>safetyFactor: *</strong> <input type="text" name="safetyFactor"
-value="<?php echo $safetyFactor; ?>"/>
+value="<?php echo $safetyFactor; ?>"/><br/>
 <strong>startState: *</strong> <input type="text" name="startState"
 value="<?php echo $startState; ?>"/>
 <p>* required</p>

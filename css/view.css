@@ -18,9 +18,33 @@
   background-color: lightgrey;
 }
 
+.recordForm strong {
+  display: block;
+}
+
+.recordForm input {
+  display: inline-block;
+}
+
+.recordForm {
+  font-size: 4vw;
+}
+
 @media (max-width: 900px) {
   .viewTable tr {
     font-size: 3vw;
     word-wrap: normal;
+  }
+}
+
+@media (min-width: 901px) {
+  .recordForm {
+    font-size: 2vw;
+  }
+  .recordForm strong {
+    display: inline;
+  }
+  .recordForm br:nth-of-type(2n) {
+    display: none;
   }
 }
