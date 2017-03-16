@@ -318,11 +318,11 @@ version : 1.0
 
   <body>
   	<section> <!-- This section holds the Previous and Next action buttons/links to move through the data in time -->
-      <form method="get" action='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>' class="previous">
+      <form method="get" action="chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>" class="previous">
         <button class="navButton" type="submit">&#8606 Previous Timeperiod</button>
       </form>
-      <form method="get" action='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>' class="next">
-        <button class="navButton" type="submit">&#8608 Next Timeperiod</button>
+      <form method="get" action="chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>" class="next">
+        <button class="navButton" type="submit">Next Timeperiod &#8608</button>
       </form>
   		<a id="previous" href='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>'>Previous</a>
       <a id="next" href='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>'>Next</a>
