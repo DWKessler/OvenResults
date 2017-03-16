@@ -21,13 +21,13 @@ function renderForm($device ='', $product ='', $lot ='', $desc ='', $error = '')
 	</head>
 	<body>
 		<?php include 'header.php';?>
-		<h1><?php if ($runid != '') { echo "Edit Record"; } else { echo "New Record"; } ?></h1>
+		<h1 class="recordTitle"><?php if ($runid != '') { echo "Edit Record"; } else { echo "New Record"; } ?></h1>
 		<?php if ($error != '') {
 		echo "<div style='padding:4px; border:1px solid red; color:red'>" . $error
 		. "</div>";
 		} ?>
 
-		<form action="" method="post">
+		<form class="recordForm" action="" method="post">
 			<div>
 			<?php if ($runid != '') { ?>
 			<input type="hidden" name="runid" value="<?php echo $runid; ?>" />

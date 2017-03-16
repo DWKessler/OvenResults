@@ -24,13 +24,13 @@ function renderForm($T1 ='', $T2 ='',$T3 ='',$T4 ='',$T5 ='',$T6 ='',$T7 ='', $e
 	<body>
 		<!-- Pull in the header -->
 		<?php include 'header.php';?>
-		<h1>Edit Record</h1>
+		<h1 class="recordTitle">Edit Record</h1>
 		<?php if ($error != '') {
 		echo "<div style='padding:4px; border:1px solid red; color:red'>" . $error
 		. "</div>";
 		} ?>
 
-		<form action="" method="post">
+		<form class="recordForm" action="" method="post">
 			<div>
 			<?php if ($runid != '') { ?>
 			<input type="hidden" name="runid" value="<?php echo $runid; ?>" />
