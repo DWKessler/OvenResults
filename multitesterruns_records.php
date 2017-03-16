@@ -11,6 +11,7 @@ function renderForm($device ='', $product ='', $lot ='', $desc ='', $error = '')
 <html>
 	<head>
 		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/view.css" />
 		<title>
 			<?php if (isset($_GET['runid'])) {
 						$runid = $_GET['runid'];

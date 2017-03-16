@@ -18,6 +18,7 @@ function renderForm($T1 ='', $T2 ='',$T3 ='',$T4 ='',$T5 ='',$T6 ='',$T7 ='', $e
 	<head>
 		<!-- Pull in the stylesheet -->
 		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/view.css" />
 		<title>Edit Record</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	</head>

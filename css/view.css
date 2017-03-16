@@ -1,25 +1,26 @@
 /*center the table on the page with some space on either side*/
-table,
-body p,
-body h1,
-table a,
-body form div {
+.viewTable,
+.viewTitle,
+.viewOptions,
+.addNew,
+.recordTitle,
+.recordForm {
   margin:auto;
-  width: 95%;
+  /*width: 95%;*/
   text-align: center;
 }
 
-table tr {
+.viewTable tr {
   font-size: 2vw;
 }
 
-table tr:nth-child(even) {
+.viewTable tr:nth-child(even) {
   background-color: lightgrey;
 }
 
 @media (max-width: 900px) {
-  table tr {
-    font-size: 5vw;
+  .viewTable tr {
+    font-size: 3vw;
     word-wrap: normal;
   }
 }

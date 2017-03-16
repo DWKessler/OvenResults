@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/view.css" />
 <title>View Records</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
@@ -9,7 +10,7 @@
 <?php include 'header.php';?>
 <h1 class="viewTitle">View Records</h1>
 
-<p class="viewOptions"><b>View All</b> | <a href="ovenproduct_view-paginated.php">View Paginated</a></p>
+<p class='viewOptions'><b>View All</b> | <a href="ovenproduct_view-paginated.php">View Paginated</a></p>
 
 <?php
 // connect to the database
@@ -22,7 +23,7 @@ if ($result = $mysqli->query("SELECT * FROM ovenshifter_products ORDER BY produc
 if ($result->num_rows > 0)
 {
 // display records in a table
-echo "<table border='1' cellpadding='10' class="viewTable">";
+echo "<table border='1' cellpadding='10' class='viewTable'>";
 
 // set table headers
 echo "<tr>

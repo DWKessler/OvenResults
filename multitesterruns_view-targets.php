@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/view.css" />
 	<title>View Multitester Targets</title>
 	<?php if (isset($_GET['runid'])) {
 						$runid = $_GET['runid'];
@@ -25,7 +26,7 @@
 		if ($result->num_rows > 0)
 		{
 			// display records in a table
-			echo "<table border='1' cellpadding='10' class="viewTable">";
+			echo "<table border='1' cellpadding='10' class='viewTable'>";
 
 			// set table headers
 			echo "<tr>

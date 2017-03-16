@@ -14,6 +14,7 @@ function renderForm($description = '', $error = '', $device_id = '')
 <html>
 <head>
   <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/view.css" />
 <title>
 <?php if ($device_id != '') { echo "Edit Record"; } else { echo "New Record"; } ?>
 </title>

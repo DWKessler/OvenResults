@@ -14,6 +14,7 @@ function renderForm($product = '', $FL ='', $FH ='', $NH ='', $NL ='', $safetyLi
 <html>
 <head>
 <link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/view.css" />
 <title>
 <?php if ($id != '') { echo "Edit Record"; } else { echo "New Record"; } ?>
 </title>

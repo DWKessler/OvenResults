@@ -10,7 +10,7 @@
 <?php include 'header.php';?>
 <h1 class="viewTitle">View Multitester Devices</h1>
 
-<p class="viewOptions"><b>View All</b> | <a href="multitesterdevices_view-paginated.php">View Paginated</a></p>
+<p class='viewOptions'><b>View All</b> | <a href="multitesterdevices_view-paginated.php">View Paginated</a></p>
 
 <?php
 // connect to the database
@@ -23,7 +23,7 @@ if ($result = $mysqli->query("SELECT * FROM multitester_devices ORDER BY device_
 if ($result->num_rows > 0)
 {
 // display records in a table
-echo "<table border='1' cellpadding='10' class="viewTable">";
+echo "<table border='1' cellpadding='10' class='viewTable'>";
 
 // set table headers
 echo "<tr>
