@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Pull in the stylesheets -->    
+    <!-- Pull in the stylesheets -->
     <link rel="stylesheet" href="css/header.css" />
   </head>
   <body>
@@ -16,9 +16,10 @@
           <div class="dropdown-content">
             <a href="ovenStatus.php">Status</a>
             <a href="ovenResults.php">Results</a>
-            <a href="ovenruns_view.php">Runs</a>
-            <a href="ovenproduct_view.php">Products</a>
-            <a href="ovendevices_view.php">Devices</a>
+            <!-- Temporarily removed some sections -->
+            <!-- <a href="ovenruns_view.php">Runs</a> -->
+            <!-- <a href="ovenproduct_view.php">Products</a> -->
+            <!-- <a href="ovendevices_view.php">Devices</a> -->
           </div>
         </div>
         <!-- Some of the top level divs have a longTitle and a shortTitle that are toggled depending on the screen size -->
@@ -28,12 +29,13 @@
             <a href="#">History</a>
           </div>
         </div>
-        <div class="dropdown"><p class="dropTitle"><span class="longTitle">Base Unit Asm</span><span class="shortTitle">BU Asm</span> &#x25BC</p>
+        <!-- Temporarily removed some sections -->
+        <!-- <div class="dropdown"><p class="dropTitle"><span class="longTitle">Base Unit Asm</span><span class="shortTitle">BU Asm</span> &#x25BC</p>
           <div class="dropdown-content">
             <a href="chartBaseUnitCP.php">Status</a>
             <a href="#">History</a>
           </div>
-        </div>
+        </div> -->
         <div class="dropdown"><p class="dropTitle"><span class="longTitle">Multitester</span><span class="shortTitle">Tester</span> &#x25BC</p>
           <div class="dropdown-content">
             <a href="multitesterruns_view.php">Runs</a>
