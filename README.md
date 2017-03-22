@@ -3,10 +3,10 @@ Many functions rely on PHP and some on a MySQL database.
 
 The primary components and the techniques demonstrated are listed below.
 
-* Header: Links together different segments in machine-based groups.
+* Header: Links together different segments in groups based on the machine they show data from.
   * Techniques:
-    * Flexbox for layout
-    * CSS hover dropdowns
+    * Flexbox for layout.
+    * CSS hover dropdowns.
     * CSS media queries to be responsive at different breakpoints.
 
 * Ovens:
@@ -16,20 +16,14 @@ The primary components and the techniques demonstrated are listed below.
 
   * Results: A page designed for viewing and printing of the oven run's results.
     * Techniques:
-      * Table is entirely generated with Javascript and is then broken up into smaller tables with Javascript.
-      * Data is randomly generated and color coded based on value.
-      * CSS media queries are used to be responsive at several resolutions as well as for printing.
-
-  * Runs/Products/Devices
+      * Javascript and jquery are used to generate the table, break it into smaller tables, and color code the randomly generated values.
+      * CSS media queries to be responsive at different breakpoints and for printing.
 
 * Assembly 5:
   * Status: This page showcases data from a MySQL database in the form of two Google Charts. A page designed for a display in a fixed location by a machine. Not intended to be responsive.
     * Techniques:
       * MySQL queries
       * Google Chart formatting and JSON arrays.
-
-* Base Unit Assembly:
-  * Status:
 
 * Multitester:
   * Runs/Products/Devices
