@@ -22,8 +22,10 @@ The primary components and the techniques demonstrated are listed below.
 * Assembly 5:
   * Status: This page showcases data from a MySQL database in the form of two Google Charts. A page designed for a display in a fixed location by a machine. Not intended to be responsive. Previous and Next buttons can be used to scroll through the data in time.
     * Techniques:
-      * MySQL queries
+      * MySQL queries.
       * Google Chart formatting and JSON arrays.
 
 * Multitester:
-  * Runs/Products/Devices
+  * Devices: This page allows the user to add/delete/edit records from the MySQL database.
+    * Techniques:
+      * MySQL queries.

@@ -38,8 +38,9 @@
         </div> -->
         <div class="dropdown"><p class="dropTitle"><span class="longTitle">Multitester</span><span class="shortTitle">Tester</span> &#x25BC</p>
           <div class="dropdown-content">
-            <a href="multitesterruns_view.php">Runs</a>
-            <a href="multitesterproduct_view.php">Products</a>
+            <!-- Temporarily removed some sections -->
+            <!-- <a href="multitesterruns_view.php">Runs</a> -->
+            <!-- <a href="multitesterproduct_view.php">Products</a> -->
             <a href="multitesterdevices_view.php">Devices</a>
           </div>
         </div>
