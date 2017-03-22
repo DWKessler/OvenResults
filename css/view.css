@@ -14,10 +14,12 @@
   font-size: 2vw;
 }
 
+/*color codes every other line*/
 .viewTable tr:nth-child(even) {
   background-color: lightgrey;
 }
 
+/*formats the record add/edit to keep them from being displayed all in one line*/
 .recordForm strong {
   display: block;
 }
@@ -37,6 +39,7 @@
   }
 }
 
+/*for larger screens, display the entry field next to the title*/
 @media (min-width: 901px) {
   .recordForm {
     font-size: 2vw;
