@@ -1,4 +1,6 @@
 <?php
+//modified from Benjamin Falk's framework at http://www.killersites.com/community/index.php?/topic/3064-basic-php-system-view-edit-add-delete-records-with-mysqli/
+
 //allows for viewing and editing multitester runs and adding a new run.
 
 // connect to the database

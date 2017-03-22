@@ -1,4 +1,6 @@
 <?php
+//modified from Benjamin Falk's framework at http://www.killersites.com/community/index.php?/topic/3064-basic-php-system-view-edit-add-delete-records-with-mysqli/
+
 //This page shows the status of a life test run and lets the user change the targets for the life test
 
 // connect to the database

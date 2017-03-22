@@ -1,4 +1,5 @@
 <?php
+//modified from Benjamin Falk's framework at http://www.killersites.com/community/index.php?/topic/3064-basic-php-system-view-edit-add-delete-records-with-mysqli/
 
 // connect to the database
 include('connect-db.php');
