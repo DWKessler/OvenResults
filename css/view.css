@@ -1,3 +1,8 @@
+/*sets the addNew link to block so it can have margins*/
+.addNew {
+  display: block;
+}
+
 /*center the table on the page with some space on either side*/
 .viewTable,
 .viewTitle,
@@ -6,12 +11,16 @@
 .recordTitle,
 .recordForm {
   margin:auto;
-  /*width: 95%;*/
   text-align: center;
 }
 
+/*hides the footer*/
+footer {
+  display: none;
+}
+
 .viewTable tr {
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 /*color codes every other line*/
@@ -32,15 +41,29 @@
   font-size: 4vw;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .viewTable tr {
-    font-size: 3vw;
+    font-size: 4vw;
     word-wrap: normal;
+  }
+  .viewTable td {
+    padding: 10px;
+  }
+  .addNew,
+  .viewOptions,
+  .viewTitle,
+  .recordTitle {
+    font-size: 5vw;
+    padding: 20px;
+  }
+  .viewTitle,
+  .recordTitle {
+    font-size: 8vw;
   }
 }
 
 /*for larger screens, display the entry field next to the title*/
-@media (min-width: 901px) {
+@media (min-width: 1001px) {
   .recordForm {
     font-size: 2vw;
   }
