@@ -315,14 +315,13 @@ Original source: http://stackoverflow.com/questions/12994282/php-mysql-google-ch
 
   <body>
   	<section> <!-- This section holds the Previous and Next action buttons/links to move through the data in time -->
-      <form method="get" action="chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>" class="previous">
+      <a id="previous" href='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>' class="previous">
         <button class="navButton" type="submit">&#8606 Previous Timeperiod</button>
-      </form>
-      <form method="get" action="chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>" class="next">
+      </a>
+      <a id="next" href='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>' class="next">
         <button class="navButton" type="submit">Next Timeperiod &#8608</button>
-      </form>
-  		<a id="previous" href='chartAssembly5CPtime.php?time=<?php echo $timerange[1];?>'>Previous</a>
-      <a id="next" href='chartAssembly5CPtime.php?time=<?php echo $timerange[2];?>'>Next</a>
+      </a>
+
   	</section>
   	<section> <!-- This section holds the first chart -->
   		<div id="chart_div1" class="ca51" style="width: 99%;"></div>
