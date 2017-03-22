@@ -26,7 +26,8 @@
         <div class="dropdown"><p class="dropTitle"><span class="longTitle">Assembly 5</span><span class="shortTitle">Assy 5</span> &#x25BC</p>
           <div class="dropdown-content">
             <a href="chartAssembly5CPtime.php">Status</a>
-            <a href="#">History</a>
+            <a href="#">Blank Entry</a>
+            <a href="#">Blank Entry</a>
           </div>
         </div>
         <!-- Temporarily removed some sections -->
@@ -42,6 +43,8 @@
             <!-- <a href="multitesterruns_view.php">Runs</a> -->
             <!-- <a href="multitesterproduct_view.php">Products</a> -->
             <a href="multitesterdevices_view.php">Devices</a>
+            <a href="#">Blank Entry</a>
+            <a href="#">Blank Entry</a>
           </div>
         </div>
     </div>
