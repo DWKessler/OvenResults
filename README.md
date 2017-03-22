@@ -20,7 +20,7 @@ The primary components and the techniques demonstrated are listed below.
       * CSS media queries to be responsive at different breakpoints and for printing.
 
 * Assembly 5:
-  * Status: This page showcases data from a MySQL database in the form of two Google Charts. A page designed for a display in a fixed location by a machine. Not intended to be responsive.
+  * Status: This page showcases data from a MySQL database in the form of two Google Charts. A page designed for a display in a fixed location by a machine. Not intended to be responsive. Previous and Next buttons can be used to scroll through the data in time.
     * Techniques:
       * MySQL queries
       * Google Chart formatting and JSON arrays.
