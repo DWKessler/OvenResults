@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
-
-
 <?php
 /*
-Script  : PHP-JSON-MySQLi-GoogleChart
-Author  : Enam Hossain
-version : 1.0
-(modified)
+This code was used as a template to build my intiial Google Charts
+PHP-JSON-MySQLi-GoogleChart by Enam Hossain
+Original source: http://stackoverflow.com/questions/12994282/php-mysql-google-chart-json-complete-example
+(heavily modified)
 */
 
   include('connect-db.php');
