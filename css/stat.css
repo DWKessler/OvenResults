@@ -8,6 +8,7 @@ a {
   text-decoration: none;
 }
 
+/* basic borders, padding, and text size*/
 .viewtable {
   border:1px solid #C0C0C0;
   border-collapse:collapse;
@@ -27,11 +28,13 @@ a {
   padding:5px;
 }
 
+/*size the buttons for time navigation*/
 button {
   min-width: 190px;
   margin-top: 5px;
 }
 
+/* send the Next and Previous buttons to the sides of the screen*/
 .next {
   float: right;
 }
@@ -40,7 +43,7 @@ button {
   float: left;
 }
 
-
+/*set borders for the two main charts*/
 #chart_div1,
 #chart_div2{
 	clear: both;
@@ -49,7 +52,7 @@ button {
 }
 
 
-
+/*these media queries adjust the size of each of the tables based on screen resolution*/
 @media (max-height: 800px) {
   .ca5stations {
 		height: 280px;
@@ -84,6 +87,7 @@ button {
 	}
 }
 
+/*hide the buttons for printing*/
 @media print {
   button {
       display: none;
