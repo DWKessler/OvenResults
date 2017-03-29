@@ -1,5 +1,6 @@
 This project is a compilation of several data/statistical user interfaces.
 Many functions rely on PHP and some on a MySQL database.
+The project files are available at https://github.com/DWKessler/OvenResults/tree/master but are also hosted live at http://codeL.DWKessler.com
 
 The primary components and the techniques demonstrated are listed below.
 
