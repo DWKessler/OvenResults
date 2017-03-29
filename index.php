@@ -3,7 +3,7 @@
   <!-- This is just a landing page -->
   <head>
     <link rel="stylesheet" href="css/normalize.css" />
-    <title>Oven Status</title>
+    <title>Electronics Statistics</title>
   </head>
 
   <body>
