@@ -2,3 +2,16 @@ multitesterproduct_delete.php
 multitesterproduct_records.php
 miltitesterprodict_view.php
 multitesterproduct_view-paginated.php
+multitesterruns_records.php
+multitesterruns_records-targets.php
+multitesterruns_view.php
+multitesterruns_view-paginated.php
+multitesterruns_view-targets.php
+ovendevices_delete.php
+ovendevices_records.php
+ovendevices_view.php
+ovendevices_view-paginated.php
+ovenproduct_delete.php
+ovenproduct_records.php
+ovenproduct_view.php
+ovenproduct_view-paginated.php
