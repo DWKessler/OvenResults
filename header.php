@@ -8,12 +8,12 @@
     <div class="header">
         <!-- This form is the main logo -->
         <form method="get" action="index.php" class="topNav">
-          <button class="dropTitle mainNav" type="submit"><img class="logo" src="img/LogoTrans.png">Electronics Statistics</button>
+          <button onclick="" class="dropTitle mainNav" type="submit"><img class="logo" src="img/LogoTrans.png">Electronics Statistics</button>
         </form>
         <!-- Each of the following top level divs are hoverable titles that show dropdown menus -->
-        <div class="dropdown"><p class="dropTitle">Ovens &#x25BC</p>
+        <div onclick="" class="dropdown"><p class="dropTitle">Ovens &#x25BC</p>
           <!-- Each of the inner divs are clickable links to subpages -->
-          <div class="dropdown-content">
+          <div onclick="" class="dropdown-content">
             <a href="ovenStatus.php">Status</a>
             <a href="ovenResults.php">Results</a>
             <!-- Temporarily removed some sections -->
@@ -23,8 +23,8 @@
           </div>
         </div>
         <!-- Some of the top level divs have a longTitle and a shortTitle that are toggled depending on the screen size -->
-        <div class="dropdown"><p class="dropTitle"><span class="longTitle">Assembly 5</span><span class="shortTitle">Assy 5</span> &#x25BC</p>
-          <div class="dropdown-content">
+        <div onclick="" class="dropdown"><p class="dropTitle"><span class="longTitle">Assembly 5</span><span class="shortTitle">Assy 5</span> &#x25BC</p>
+          <div onclick="" class="dropdown-content">
             <a href="chartAssembly5CPtime.php">Status</a>
             <a href="#">Blank Entry</a>
             <a href="#">Blank Entry</a>
@@ -37,8 +37,8 @@
             <a href="#">History</a>
           </div>
         </div> -->
-        <div class="dropdown"><p class="dropTitle"><span class="longTitle">Multitester</span><span class="shortTitle">Tester</span> &#x25BC</p>
-          <div class="dropdown-content">
+        <div onclick="" class="dropdown"><p class="dropTitle"><span class="longTitle">Multitester</span><span class="shortTitle">Tester</span> &#x25BC</p>
+          <div onclick="" class="dropdown-content">
             <!-- Temporarily removed some sections -->
             <!-- <a href="multitesterruns_view.php">Runs</a> -->
             <!-- <a href="multitesterproduct_view.php">Products</a> -->
