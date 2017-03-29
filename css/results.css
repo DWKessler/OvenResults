@@ -36,12 +36,18 @@
 /*intermediate size formating*/
 @media only screen and (max-width: 800px) {
   .OvenTable {
-      font-size: 8vw;
+      font-size: 3vw;
+  }
+}
+/*intermediate size formating*/
+@media only screen and (max-width: 600px) {
+  .OvenTable {
+      font-size: 6vw;
   }
 }
 
 /*small size formating*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 414px) and (orientation: portrait) {
   .OvenTable {
       font-size: 10vw;
   }
@@ -51,7 +57,7 @@
 }
 
 /*for larger screens, float the tables to wrap them*/
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-device-width: 415px) and (min-width: 801px) {
   .OvenTable {
       font-size: 2vw;
       width: 15%;
