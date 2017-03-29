@@ -7,6 +7,8 @@ Original source: http://stackoverflow.com/questions/12994282/php-mysql-google-ch
 (heavily modified)
 */
 
+/*The data collection and chart formatting is of my own design*/
+
   include('connect-db.php');
 
   //these variables define the acceptable limits of contact pressure on the chart
